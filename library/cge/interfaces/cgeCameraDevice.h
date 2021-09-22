@@ -33,7 +33,6 @@
     BOOL _capturePaused;
     AVCaptureDevice* _microphoneDevice;
     AVCaptureDeviceInput *_videoInput;
-    AVCaptureVideoDataOutput *_videoOutput;
     
     __unsafe_unretained id<CGECameraDeviceOutputDelegate> _outputDelegate;
 }
@@ -41,6 +40,7 @@
 @property(nonatomic, assign, readonly) CGSize cameraResolution; // 相机当前使用的分辨率
 @property(readonly, retain, nonatomic) AVCaptureSession *captureSession; // 相机当前使用的 session
 @property(readwrite) AVCaptureStillImageOutput *stillImageOutput; // 相机当前可用于拍照的 output
+@property(readonly, retain, nonatomic) AVCaptureVideoDataOutput *videoOutput;
 
 // This enables the capture session preset to be changed on the fly
 // (相机当前使用的 session preset， 在相机已经启动的情况下对 captureSessionPreset 进行赋值可以实时改变当前的相机分辨率)
